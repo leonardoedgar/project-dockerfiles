@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  yarnmaster:
+    build: .
+    image: leonardo/projectimage
+    container_name: yarnmaster
+    network_mode: "host"
+    environment:
+      - DISPLAY=unix$DISPLAY
+    shm_size: 256M
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./project-solution:/home/leonardo/project-solution
+    stop_signal: SIGINT
+    working_dir: /home/leonardo/project-solution/
+    command: sleep infinity
