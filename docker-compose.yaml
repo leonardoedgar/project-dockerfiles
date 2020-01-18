@@ -12,6 +12,10 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./project-solution:/home/leonardo/project-solution
+      - node_modules:/home/leonardo/project-solution/node_modules
     stop_signal: SIGINT
     working_dir: /home/leonardo/project-solution/
     command: sleep infinity
+
+volumes:
+  node_modules:

@@ -26,3 +26,7 @@ USER ${user}
 RUN sudo usermod -a -G video ${user}
 
 WORKDIR ${home}
+
+# Install node modules
+COPY --chown=leonardo project-solution/			project-solution/
+RUN cd project-solution && yarn install
