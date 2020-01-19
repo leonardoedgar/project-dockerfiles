@@ -15,7 +15,7 @@ services:
       - node_modules:/home/leonardo/project-solution/node_modules
     stop_signal: SIGINT
     working_dir: /home/leonardo/project-solution/
-    command: sleep infinity
+    command: ["yarn", "start-dev"]
 
 volumes:
   node_modules:
